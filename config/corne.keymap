@@ -11,10 +11,12 @@
 
 
 / {
-    &mt {
-        tapping-term-ms = <200>;
-        flavor = "balanced";
-    };
+    behaviors {
+        &mt {
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+    }
     keymap {
         compatible = "zmk,keymap";
 
