@@ -7,6 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#include "includes/behaviours_homerow_mods.dtsi"
+
 / {
     behaviors {
         bhm: balanced_homerow_mods {
