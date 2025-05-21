@@ -4,10 +4,9 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "includes/behaviours_homerow_mods.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
-#include "includes/behaviours_homerow_mods.dtsi"
 
 / {
     behaviors {
@@ -32,10 +31,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE        &kp Q            &kp W            &kp E              &kp R         &kp T        &kp Y    &kp U          &kp I               &kp O            &kp P            &trans
-&tog 2            &hm_l LEFT_GUI A  &hm_l LEFT_ALT S  &hm_shift_l LEFT_SHIFT D  &hm_l LCTRL F  &kp G        &kp H    &hm_r RCTRL J   &hm_shift_r RIGHT_SHIFT K  &hm_r LEFT_ALT L  &lt 1 SEMICOLON  &kp SQT
-&kp LEFT_CONTROL  &kp Z            &kp X            &kp C              &kp V         &kp B        &kp N    &kp M          &kp COMMA           &kp DOT          &kp FSLH         &kp ESC
-                                                    &trans             &kp TAB       &kp SPACE    &kp RET  &kp BACKSPACE  &trans
+&kp ESCAPE        &kp Q             &kp W             &kp E                     &kp R          &kp T        &kp Y    &kp U          &kp I                      &kp O             &kp P            &trans
+&tog 2            &hm_l LEFT_GUI A  &hm_l LEFT_ALT S  &hm_shift_l LEFT_SHIFT D  &hm_l LCTRL F  &kp G        &kp H    &hm_r RCTRL J  &hm_shift_r RIGHT_SHIFT K  &hm_r LEFT_ALT L  &lt 1 SEMICOLON  &kp SQT
+&kp LEFT_CONTROL  &kp Z             &kp X             &kp C                     &kp V          &kp B        &kp N    &kp M          &kp COMMA                  &kp DOT           &kp FSLH         &kp ESC
+                                                      &trans                    &kp TAB        &kp SPACE    &kp RET  &kp BACKSPACE  &trans
             >;
         };
 
@@ -64,8 +63,17 @@
             bindings = <
 &trans  &kp EXCL  &trans    &kp UP_ARROW  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
 &trans  &trans    &kp LEFT  &kp DOWN      &kp RIGHT  &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &trans    &trans    &trans        &trans     &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+&to 3   &trans    &trans    &trans        &trans     &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
                             &trans        &trans     &kp SPACE    &kp RET    &trans     &kp RALT
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&trans                   &kp Q   &kp W   &kp E   &trans            &trans       &trans  &trans  &trans  &trans  &trans  &to 0
+&mt LEFT_SHIFT CAPSLOCK  &kp A   &kp S   &kp D   &kp F             &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans                   &trans  &trans  &trans  &trans            &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                                         &trans  &kp LEFT_CONTROL  &kp SPACE    &trans  &trans  &trans
             >;
         };
     };
