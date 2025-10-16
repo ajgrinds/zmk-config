@@ -32,9 +32,18 @@
 
             bindings = <
 &trans  &mt ESC Q         &kp W             &kp E                     &kp R          &kp T        &kp Y    &kp U          &kp I                      &kp O             &kp P            &trans
-&trans  &hm_l LEFT_GUI A  &hm_l LEFT_ALT S  &hm_shift_l LEFT_SHIFT D  &hm_l LCTRL F  &kp G        &kp H    &hm_r RCTRL J  &hm_shift_r RIGHT_SHIFT K  &hm_r LEFT_ALT L  &lt 1 SEMICOLON  &trans
-&trans  &lt 2 Z           &kp X             &kp C                     &kp V          &kp B        &kp N    &kp M          &kp COMMA                  &kp DOT           &kp FSLH         &trans
-                                            &mo 2                     &kp TAB        &kp SPACE    &kp RET  &kp BACKSPACE  &kp DEL
+&trans  &hm_l LEFT_GUI A  &hm_l LEFT_ALT S  &hm_shift_l LEFT_SHIFT D  &hm_l LCTRL F  &kp G        &kp H    &hm_r RCTRL J  &hm_shift_r RIGHT_SHIFT K  &hm_r LEFT_ALT L  &lt 2 SEMICOLON  &trans
+&trans  &lt 3 Z           &kp X             &kp C                     &kp V          &kp B        &kp N    &kp M          &kp COMMA                  &kp DOT           &kp FSLH         &trans
+                                            &mo 1                     &kp TAB        &kp SPACE    &kp RET  &kp BACKSPACE  &kp DEL
+            >;
+        };
+
+        asdf {
+            bindings = <
+&trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(A)  &kp LA(S)  &kp LS(D)  &kp LC(F)  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                              &trans     &trans     &trans    &trans  &trans  &trans
             >;
         };
 
@@ -61,9 +70,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &to 3          &trans    &kp UP_ARROW  &trans     &trans              &kp F9  &kp F10  &kp F11   &kp F12  &trans  &trans
-&trans  &kp PAGE_UP    &kp LEFT  &kp DOWN      &kp RIGHT  &trans              &kp F5  &kp F6   &kp F7    &kp F8   &trans  &trans
-&trans  &kp PAGE_DOWN  &trans    &trans        &trans     &trans              &kp F1  &kp F2   &kp F3    &kp F4   &trans  &trans
+&trans  &kp PAGE_UP    &trans    &kp UP_ARROW  &trans     &trans              &kp F9  &kp F10  &kp F11   &kp F12  &to 4   &trans
+&trans  &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT  &trans              &kp F5  &kp F6   &kp F7    &kp F8   &trans  &trans
+&trans  &trans         &trans    &trans        &trans     &trans              &kp F1  &kp F2   &kp F3    &kp F4   &trans  &trans
                                  &trans        &trans     &kp C_PLAY_PAUSE    &trans  &trans   &kp RALT
             >;
         };
