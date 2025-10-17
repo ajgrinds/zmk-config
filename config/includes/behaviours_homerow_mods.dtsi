@@ -22,8 +22,8 @@
         // it's on the opposite side of the keyboard or on the same side thumb
         // keys.
 
-        // Further optimization using urob's timerless homerow mods method:
-        // https://github.com/urob/zmk-config#timeless-homerow-mods
+        // Optimized for FAST typing - no require-prior-idle-ms
+        // Activates instantly when pressing opposite hand keys
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -32,7 +32,7 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            // NO require-prior-idle-ms - instant activation on opposite-hand press
 
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
@@ -46,7 +46,7 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            // NO require-prior-idle-ms - instant activation on opposite-hand press
 
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
@@ -64,7 +64,7 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            // NO require-prior-idle-ms for shift - instant opposite-hand activation
 
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
@@ -78,7 +78,7 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            // NO require-prior-idle-ms for shift - instant opposite-hand activation
 
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
