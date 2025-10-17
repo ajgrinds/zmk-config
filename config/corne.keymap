@@ -5,21 +5,11 @@
  */
 
 #include "includes/behaviours_homerow_mods.dtsi"
+#include "includes/oled_graphics.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    behaviors {
-        bhm: balanced_homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;    // <---[[moderate duration]]
-            quick-tap-ms = <70>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 

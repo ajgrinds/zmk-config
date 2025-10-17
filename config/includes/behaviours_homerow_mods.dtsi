@@ -1,8 +1,8 @@
 // Make sure settings.dtsi is included before this file
 
-#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM 280
 #define HM_TAPPING_TERM_FAST 200
-#define HM_PRIOR_IDLE 150
+#define HM_PRIOR_IDLE 200
 
 #include "zmk-helpers/key-labels/42.h"
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5
@@ -67,7 +67,7 @@
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         hm_shift_r: hm_shift_r {
@@ -81,7 +81,7 @@
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         /*
