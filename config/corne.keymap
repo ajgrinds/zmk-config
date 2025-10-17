@@ -7,7 +7,6 @@
 #include "includes/behaviours_homerow_mods.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
 / {
     keymap {
@@ -45,10 +44,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCLAMATION  &kp AMPERSAND  &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PERCENT  &trans     &trans
+&trans  &kp EXCLAMATION  &kp AMPERSAND  &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PERCENT  &kp PIPE   &trans
 &trans  &kp TILDE        &kp EQUAL      &kp LBKT           &kp RBKT              &kp BSLH                 &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp DOLLAR   &trans     &trans
-&trans  &kp HASH         &kp PLUS       &kp LEFT_BRACE     &kp RIGHT_BRACE       &kp PIPE                 &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp GRAVE    &kp CARET  &trans
-                                        &kp DOUBLE_QUOTES  &kp MINUS             &kp UNDERSCORE           &kp SQT          &kp KP_NUMBER_0  &kp AT
+&trans  &kp HASH         &kp PLUS       &kp LEFT_BRACE     &kp RIGHT_BRACE       &kp AT_SIGN              &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp GRAVE    &kp CARET  &trans
+                                        &kp DOUBLE_QUOTES  &kp MINUS             &kp UNDERSCORE           &kp SQT          &trans           &kp KP_NUMBER_0
             >;
         };
 
