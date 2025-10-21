@@ -1,6 +1,6 @@
 // Make sure settings.dtsi is included before this file
 
-#define HM_TAPPING_TERM 280
+#define HM_TAPPING_TERM 200
 #define HM_TAPPING_TERM_FAST 200
 #define HM_PRIOR_IDLE 150
 
@@ -14,31 +14,32 @@
     behaviors {
 
         // Positional Homerow mods
-        // hold-preferred flavor = more aggressive mod triggering
-        // No quick-tap-ms = double-tap triggers the modifier
-        // No require-prior-idle-ms = works great with fast typing
+        // balanced flavor = requires hold or opposite hand key press for mod
+        // quick-tap-ms = allows double-tap to repeat the base key quickly
+        // require-prior-idle-ms = prevents accidental mods during fast typing
+        // hold-trigger-key-positions = only triggers hold with opposite hand
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>,  <&kp>;
 
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            // No quick-tap-ms: allows double-tap to trigger modified key
-            // No require-prior-idle-ms: prevents false negatives
+            hold-trigger-key-positions = <KEYS_L KEYS_R KEYS_T>;
+            hold-trigger-on-release;
         };
 
         // Positional Homerow mods for shift
-        // hold-preferred for more aggressive shift triggering
+        // balanced flavor for better nested key handling
         hm_shift_l: hm_shift_l {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "hold-preferred";
-            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            // No quick-tap-ms: allows double-tap to trigger Shift
-            // No require-prior-idle-ms: prevents false negatives
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            hold-trigger-key-positions = <KEYS_L KEYS_R KEYS_T>;
+            hold-trigger-on-release;
         };
     };
 };
