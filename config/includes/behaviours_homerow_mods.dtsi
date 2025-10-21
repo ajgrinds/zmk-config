@@ -2,7 +2,7 @@
 
 #define HM_TAPPING_TERM 280
 #define HM_TAPPING_TERM_FAST 200
-#define HM_PRIOR_IDLE 200
+#define HM_PRIOR_IDLE 150
 
 #include "zmk-helpers/key-labels/42.h"
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5
@@ -14,94 +14,31 @@
     behaviors {
 
         // Positional Homerow mods
-        // Homerow mods that prevent accidental activations when rolling keys,
-        // such as when typing `st` or `ne` on colemak-dh layouts or `as` on
-        // qwerty.
-        //
-        // Works by only allowing a mod to activate within tapping-term if
-        // it's on the opposite side of the keyboard or on the same side thumb
-        // keys.
-
-        // Optimized for FAST typing - no require-prior-idle-ms
-        // Activates instantly when pressing opposite hand keys
+        // hold-preferred flavor = more aggressive mod triggering
+        // No quick-tap-ms = double-tap triggers the modifier
+        // No require-prior-idle-ms = works great with fast typing
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>,  <&kp>;
 
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <175>;                // repeat on tap-into-hold
-            // NO require-prior-idle-ms - instant activation on opposite-hand press
-
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
-            hold-trigger-on-release;
+            // No quick-tap-ms: allows double-tap to trigger modified key
+            // No require-prior-idle-ms: prevents false negatives
         };
-
-        hm_r: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <175>;
-            // NO require-prior-idle-ms - instant activation on opposite-hand press
-
-            hold-trigger-key-positions = <KEYS_L KEYS_T>;
-            hold-trigger-on-release;
-        };
-
 
         // Positional Homerow mods for shift
-        // Use faster tapping term and disable some features that may
-        // cause false negatives.
+        // hold-preferred for more aggressive shift triggering
         hm_shift_l: hm_shift_l {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <175>;
-            // NO require-prior-idle-ms for shift - instant opposite-hand activation
-
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
-            hold-trigger-on-release;
+            // No quick-tap-ms: allows double-tap to trigger Shift
+            // No require-prior-idle-ms: prevents false negatives
         };
-
-        hm_shift_r: hm_shift_r {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <175>;
-            // NO require-prior-idle-ms for shift - instant opposite-hand activation
-
-            hold-trigger-key-positions = <KEYS_L KEYS_T>;
-            hold-trigger-on-release;
-        };
-
-        /*
-         * Non-Positional Homerow Mods
-         * Used for &mm_grescm_gui behavior on left hand.
-         *
-         * Usage: &hm LSHFT T
-         * Tap: T
-         * Tap-Tap-Hold: Repeat T
-         * Hold: LSHIFT
-         */
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <200>;
-        };
-
     };
 };
