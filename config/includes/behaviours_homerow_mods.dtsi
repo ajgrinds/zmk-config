@@ -11,6 +11,41 @@
 
 / {
 
+    macros {
+        // Macros for mod+key combinations
+        macro_gui_a: macro_gui_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>
+                     , <&macro_tap &kp A>
+                     , <&macro_release &kp LGUI>;
+        };
+
+        macro_alt_s: macro_alt_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>
+                     , <&macro_tap &kp S>
+                     , <&macro_release &kp LALT>;
+        };
+
+        macro_shift_d: macro_shift_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LSHIFT>
+                     , <&macro_tap &kp D>
+                     , <&macro_release &kp LSHIFT>;
+        };
+
+        macro_ctrl_f: macro_ctrl_f {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&macro_tap &kp F>
+                     , <&macro_release &kp LCTRL>;
+        };
+    };
+
     behaviors {
 
         // Tap-dance behaviors for each homerow key
@@ -19,28 +54,28 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <HM_TAPPING_TERM>;
-            bindings = <&kp A>, <&kp LG(A)>;
+            bindings = <&kp A>, <&macro_gui_a>;
         };
 
         td_alt_s: td_alt_s {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <HM_TAPPING_TERM>;
-            bindings = <&kp S>, <&kp LA(S)>;
+            bindings = <&kp S>, <&macro_alt_s>;
         };
 
         td_shift_d: td_shift_d {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <HM_TAPPING_TERM>;
-            bindings = <&kp D>, <&kp LS(D)>;
+            bindings = <&kp D>, <&macro_shift_d>;
         };
 
         td_ctrl_f: td_ctrl_f {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <HM_TAPPING_TERM>;
-            bindings = <&kp F>, <&kp LC(F)>;
+            bindings = <&kp F>, <&macro_ctrl_f>;
         };
 
         // Homerow mod behaviors wrapping tap-dance
