@@ -13,29 +13,76 @@
 
     behaviors {
 
-        // Positional Homerow mods
-        // balanced flavor = requires hold or opposite hand key press for mod
-        // quick-tap-ms = allows double-tap to repeat the base key quickly
-        // require-prior-idle-ms = prevents accidental mods during fast typing
-        // hold-trigger-key-positions = only triggers hold with opposite hand
-        hm_l: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>,  <&kp>;
+        // Tap-dance behaviors for each homerow key
+        // Single tap = key, Double tap = mod+key
+        td_gui_a: td_gui_a {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            bindings = <&kp A>, <&kp LG(A)>;
+        };
 
+        td_alt_s: td_alt_s {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            bindings = <&kp S>, <&kp LA(S)>;
+        };
+
+        td_shift_d: td_shift_d {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            bindings = <&kp D>, <&kp LS(D)>;
+        };
+
+        td_ctrl_f: td_ctrl_f {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            bindings = <&kp F>, <&kp LC(F)>;
+        };
+
+        // Homerow mod behaviors wrapping tap-dance
+        // Hold = mod, Tap/Double-tap = handled by tap-dance
+        hm_gui_a: hm_gui_a {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI>, <&td_gui_a>;
+            
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hm_alt_s: hm_alt_s {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT>, <&td_alt_s>;
+            
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hm_shift_d: hm_shift_d {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&td_shift_d>;
+            
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             hold-trigger-key-positions = <KEYS_L KEYS_R KEYS_T>;
             hold-trigger-on-release;
         };
 
-        // Positional Homerow mods for shift
-        // balanced flavor for better nested key handling
-        hm_shift_l: hm_shift_l {
+        hm_ctrl_f: hm_ctrl_f {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&td_ctrl_f>;
+            
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             hold-trigger-key-positions = <KEYS_L KEYS_R KEYS_T>;
