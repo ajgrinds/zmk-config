@@ -16,33 +16,33 @@
         macro_gui_a: macro_gui_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LGUI>
+            bindings = <&macro_press &kp LEFT_GUI>
                      , <&macro_tap &kp A>
-                     , <&macro_release &kp LGUI>;
+                     , <&macro_release &kp LEFT_GUI>;
         };
 
         macro_alt_s: macro_alt_s {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>
+            bindings = <&macro_press &kp LEFT_ALT>
                      , <&macro_tap &kp S>
-                     , <&macro_release &kp LALT>;
+                     , <&macro_release &kp LEFT_ALT>;
         };
 
         macro_shift_d: macro_shift_d {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LSHIFT>
+            bindings = <&macro_press &kp LEFT_SHIFT>
                      , <&macro_tap &kp D>
-                     , <&macro_release &kp LSHIFT>;
+                     , <&macro_release &kp LEFT_SHIFT>;
         };
 
         macro_ctrl_f: macro_ctrl_f {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>
+            bindings = <&macro_press &kp LEFT_CONTROL>
                      , <&macro_tap &kp F>
-                     , <&macro_release &kp LCTRL>;
+                     , <&macro_release &kp LEFT_CONTROL>;
         };
     };
 
