@@ -35,6 +35,13 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        shift_d: shift_d {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_D";
+            #binding-cells = <0>;
+            bindings = <&kp D>, <&kp LS(D)>;
+        };
     };
 
     keymap {
