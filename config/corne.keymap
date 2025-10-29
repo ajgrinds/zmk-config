@@ -40,6 +40,8 @@
             label = "SHIFT_D";
             #binding-cells = <0>;
             bindings = <&hm LEFT_SHIFT D>, <&kp LS(D)>;
+
+            tapping-term-ms = <100>;
         };
 
         hm: hm {
@@ -59,6 +61,8 @@
             label = "CTRL_F";
             #binding-cells = <0>;
             bindings = <&hm LCTRL F>, <&kp LC(F)>;
+
+            tapping-term-ms = <100>;
         };
 
         alt_s: alt_s {
@@ -66,6 +70,8 @@
             label = "ALT_S";
             #binding-cells = <0>;
             bindings = <&hm LEFT_ALT S>, <&kp LA(S)>;
+
+            tapping-term-ms = <100>;
         };
 
         win_a: win_a {
@@ -73,6 +79,8 @@
             label = "WIN_A";
             #binding-cells = <0>;
             bindings = <&hm LEFT_GUI A>, <&kp LG(A)>;
+
+            tapping-term-ms = <100>;
         };
     };
 
