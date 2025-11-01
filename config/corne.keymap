@@ -82,7 +82,7 @@
         hm_fix_shift: hm_fix_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "HM_FIX_SHIFT";
-            bindings = <&mo 3>, <&hm_fix_shift>;
+            bindings = <&mo 3>, <&hm_fix_ctrl_f>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
