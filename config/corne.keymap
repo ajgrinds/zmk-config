@@ -157,7 +157,7 @@
 
         Gaming {
             bindings = <
-&trans          &kp Q   &kp W   &kp E   &trans            &trans       &trans  &trans  &trans  &trans  &trans  &to 2
+&trans          &kp Q   &kp W   &kp E   &trans            &trans       &trans  &trans  &trans  &trans  &trans  &to 0
 &trans          &kp A   &kp S   &kp D   &kp F             &trans       &trans  &trans  &trans  &trans  &trans  &trans
 &kp LEFT_SHIFT  &trans  &trans  &trans  &trans            &trans       &trans  &trans  &trans  &trans  &trans  &trans
                                 &trans  &kp LEFT_CONTROL  &kp SPACE    &trans  &trans  &trans
