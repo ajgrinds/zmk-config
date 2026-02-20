@@ -73,7 +73,7 @@
 
             bindings = <
 &trans  &kp EXCLAMATION  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp ASTERISK  &kp BACKSLASH    &kp N7        &kp NUMBER_8  &kp N9        &trans  &trans  &trans
-&trans  &trans           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL     &kp TILDE        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans  &trans
+&trans  &kp COMMA        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL     &kp TILDE        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans  &trans
 &trans  &trans           &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PLUS      &kp HASH         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans  &trans
                                                &trans                 &kp MINUS     &kp UNDER        &trans        &kp N0        &trans
             >;
