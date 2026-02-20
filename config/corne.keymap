@@ -81,10 +81,10 @@
 
         Symbols_2 {
             bindings = <
-&trans  &trans    &kp GRAVE    &kp PERCENT  &kp CARET          &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp AMPS  &kp AT_SIGN  &kp SQT      &kp DOUBLE_QUOTES  &kp PIPE    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans    &trans       &trans       &kp DOLLAR         &trans      &trans  &trans  &trans  &trans  &trans  &trans
-                               &trans       &trans             &trans      &trans  &trans  &trans
+&trans  &trans    &kp GRAVE    &kp PERCENT  &kp CARET          &kp LS(LC(T))    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp AMPS  &kp AT_SIGN  &kp SQT      &kp DOUBLE_QUOTES  &kp PIPE         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans       &trans       &kp DOLLAR         &trans           &trans  &trans  &trans  &trans  &trans  &trans
+                               &trans       &trans             &trans           &trans  &trans  &trans
             >;
         };
 
