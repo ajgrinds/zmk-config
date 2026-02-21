@@ -10,6 +10,11 @@
 
 &lt { quick-tap-ms = <200>; };
 
+&spi0 {
+    status = "okay";
+    nice_view_spi: nice_view_spi { };
+};
+
 / {
     combos {
         compatible = "zmk,combos";
