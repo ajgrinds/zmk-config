@@ -30,7 +30,7 @@
             bindings = <&kp BACKSPACE>, <&kp DEL>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         hm: hm {
