@@ -71,6 +71,24 @@
             hold-trigger-key-positions = <0 1 2 4 3 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             hold-trigger-on-release;
         };
+
+        space_score: space_score {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_SCORE";
+            bindings = <&kp SPACE>, <&kp UNDER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        space_layer: space_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACE_LAYER";
+            bindings = <&layer_hold>, <&space_score>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -84,10 +102,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&trans  &kp Q                &kp W                &kp E                  &kp R             &kp T          &kp Y      &kp U              &kp I                    &kp O                 &kp P                    &trans
-&trans  &hm_left LEFT_WIN A  &hm_left LEFT_ALT S  &hm_left LEFT_SHIFT D  &hm_left LCTRL F  &kp G          &kp H      &hm_right RCTRL J  &hm_right RIGHT_SHIFT K  &hm_right LEFT_ALT L  &layer_hold 1 SEMICOLON  &trans
-&trans  &kp Z                &kp X                &kp C                  &kp V             &kp B          &kp N      &kp M              &kp COMMA                &kp DOT               &kp FSLH                 &trans
-                                                  &trans                 &lt 3 TAB         &lt 2 SPACE    &kp ENTER  &bksp_del          &trans
+&trans  &kp Q                &kp W                &kp E                  &kp R             &kp T               &kp Y      &kp U              &kp I                    &kp O                 &kp P                    &trans
+&trans  &hm_left LEFT_WIN A  &hm_left LEFT_ALT S  &hm_left LEFT_SHIFT D  &hm_left LCTRL F  &kp G               &kp H      &hm_right RCTRL J  &hm_right RIGHT_SHIFT K  &hm_right LEFT_ALT L  &layer_hold 1 SEMICOLON  &trans
+&trans  &kp Z                &kp X                &kp C                  &kp V             &kp B               &kp N      &kp M              &kp COMMA                &kp DOT               &kp FSLH                 &trans
+                                                  &trans                 &lt 3 TAB         &space_layer 2 0    &kp ENTER  &bksp_del          &trans
             >;
         };
 
