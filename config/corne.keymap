@@ -12,7 +12,9 @@
 
 &spi0 {
     status = "okay";
-    nice_view_spi: nice_view_spi { };
+
+    nice_view_spi: nice_view_spi {
+    };
 };
 
 / {
@@ -65,7 +67,16 @@
 &trans  &kp Q           &kp W           &kp E             &kp R        &kp T          &kp Y        &kp U        &kp I              &kp O           &kp P                    &trans
 &trans  &hm LEFT_WIN A  &hm LEFT_ALT S  &hm LEFT_SHIFT D  &hm LCTRL F  &kp G          &kp H        &hm RCTRL J  &hm RIGHT_SHIFT K  &hm LEFT_ALT K  &hm RIGHT_WIN SEMICOLON  &trans
 &trans  &kp Z           &kp X           &kp C             &kp V        &kp B          &kp N        &kp M        &kp COMMA          &kp DOT         &kp FSLH                 &trans
-                                        &trans            &lt 3 TAB    &lt 2 SPACE    &lt 1 ENTER  &bksp_del    &trans
+                                        &tog 1            &lt 4 TAB    &lt 3 SPACE    &lt 2 ENTER  &bksp_del    &trans
+            >;
+        };
+
+        gallium {
+            bindings = <
+&trans  &kp B  &kp L  &kp D   &kp C   &kp V     &kp J   &kp F   &kp O     &kp U     &kp COMMA  &trans
+&trans  &kp N  &kp R  &kp T   &kp S   &kp G     &kp Y   &kp H   &kp A     &kp E     &kp I      &trans
+&trans  &kp X  &kp Q  &kp M   &kp W   &kp Z     &kp K   &kp P   &kp APOS  &kp SEMI  &kp DOT    &trans
+                      &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -101,7 +112,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END    &trans      &kp F7  &kp F8  &kp F9  &kp F12  &to 5          &trans
+&trans  &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END    &trans      &kp F7  &kp F8  &kp F9  &kp F12  &to 6          &trans
 &trans  &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT  &kp C_PP    &kp F4  &kp F5  &kp F6  &kp F11  &kp RIGHT_ALT  &trans
 &trans  &trans         &trans    &trans        &trans     &trans      &kp F1  &kp F2  &kp F3  &kp F10  &sys_reset     &trans
                                  &trans        &trans     &trans      &trans  &trans  &trans
